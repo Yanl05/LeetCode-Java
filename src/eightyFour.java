@@ -61,20 +61,20 @@ public class eightyFour {
         //    确定了最矮柱子以后，矩形的宽尽可能往两边延伸。
         //    在最矮柱子左边的最大面积矩形（子问题）。
         //    在最矮柱子右边的最大面积矩形（子问题）。
-//        return calculateArea(heights, 0, heights.length-1);
-//    }
-//    public int calculateArea(int[] heights, int start, int end){
-//        if(start>end){
-//            return 0;
-//        }
-//        int minindex = start;
-//        for(int i=start; i<=end; i++){
-//            if(heights[minindex]>heights[i]){
-//                minindex=i;
-//            }
-//        }
-//        return Math.max(heights[minindex]*(end-start+1), Math.max(calculateArea(heights,start,minindex-1),calculateArea(heights,minindex+1,end)));
-//    }
+        return calculateArea(heights, 0, heights.length-1);
+    }
+    public int calculateArea(int[] heights, int start, int end){
+        if(start>end){
+            return 0;
+        }
+        int minindex = start;
+        for(int i=start; i<=end; i++){
+            if(heights[minindex]>heights[i]){
+                minindex=i;
+            }
+        }
+        return Math.max(heights[minindex]*(end-start+1), Math.max(calculateArea(heights,start,minindex-1),calculateArea(heights,minindex+1,end)));
+    }
 
         // 方法四： 优化的分治法
 //        使用线段树来查找最小值，以优化代码
